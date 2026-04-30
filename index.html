@@ -238,9 +238,17 @@ function fmtDate(d) { if (!d) return ''; const p = d.split('-'); return p.length
 function pct(v, t) { return t ? (v / t * 100).toFixed(1) + '%' : '0%'; }
 
 async function fetchTable(table) {
-  const res = await fetch(`${SUPABASE_URL}/${table}?select=*`, { headers: HEADERS });
-  if (!res.ok) throw new Error(`Error fetching ${table}: ${res.status}`);
-  return res.json();
+  let all = [], offset = 0;
+  const BATCH = 1000;
+  while (true) {
+    const res = await fetch(`${SUPABASE_URL}/${table}?select=*&limit=${BATCH}&offset=${offset}`, { headers: HEADERS });
+    if (!res.ok) throw new Error(`Error fetching ${table}: ${res.status}`);
+    const rows = await res.json();
+    all = all.concat(rows);
+    if (rows.length < BATCH) break;
+    offset += BATCH;
+  }
+  return all;
 }
 
 // ── Navigation ──────────────────────────────────────────────
