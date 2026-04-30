@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard Valmojado v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <style>
   :root {
@@ -13,7 +14,7 @@
     --border: #2D4A2D; --primary: #2D4A2D; --primary-light: #3D6B3D;
     --accent-light: #E8D5A3; --accent-dark: #8B7332;
   }
-  .logo-svg { height: 56px; width: auto; }
+  .logo-svg { height: 60px; width: auto; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
 
@@ -99,37 +100,13 @@
 
 <!-- HEADER -->
 <div class="header">
-  <svg viewBox="0 0 360 80" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-    <!-- Buffalo icon -->
-    <g transform="translate(8, 8) scale(0.85)">
-      <!-- Body -->
-      <ellipse cx="38" cy="42" rx="26" ry="18" fill="#C8A961"/>
-      <!-- Head -->
-      <ellipse cx="62" cy="34" rx="12" ry="11" fill="#C8A961"/>
-      <!-- Horns -->
-      <path d="M54 26 Q48 12 42 16" stroke="#E8D5A3" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path d="M70 26 Q76 12 82 16" stroke="#E8D5A3" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <!-- Ear -->
-      <ellipse cx="58" cy="24" rx="3" ry="5" fill="#B89845" transform="rotate(-15 58 24)"/>
-      <!-- Eye -->
-      <circle cx="65" cy="32" r="1.8" fill="#1a2332"/>
-      <!-- Nostril -->
-      <circle cx="71" cy="37" r="1" fill="#8B7332"/>
-      <!-- Legs -->
-      <rect x="22" y="54" width="5" height="14" rx="2" fill="#B89845"/>
-      <rect x="32" y="54" width="5" height="14" rx="2" fill="#B89845"/>
-      <rect x="42" y="54" width="5" height="14" rx="2" fill="#C8A961"/>
-      <rect x="52" y="54" width="5" height="14" rx="2" fill="#C8A961"/>
-      <!-- Tail -->
-      <path d="M12 38 Q4 32 6 42" stroke="#B89845" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <!-- Udder hint -->
-      <ellipse cx="36" cy="58" rx="6" ry="3" fill="#E8D5A3" opacity="0.6"/>
-    </g>
-    <!-- Text -->
-    <text x="100" y="38" font-family="'Segoe UI', system-ui, sans-serif" font-size="30" font-weight="800" fill="#E8D5A3" letter-spacing="4">VALMOJADO</text>
-    <text x="100" y="58" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#8B9E7B" letter-spacing="3" font-weight="500">FINCA BUFALINA DE DOBLE PROPÓSITO</text>
-    <!-- Decorative line -->
-    <line x1="100" y1="65" x2="340" y2="65" stroke="#2D4A2D" stroke-width="1.5"/>
+  <svg viewBox="0 0 440 95" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+    <text x="220" y="24" text-anchor="middle" font-family="'Montserrat','Segoe UI',sans-serif" font-size="11" fill="#C8A961" letter-spacing="5" font-weight="600">AGROPECUARIA Y GANADERÍA</text>
+    <line x1="60" y1="32" x2="180" y2="32" stroke="#C8A961" stroke-width="1.5"/>
+    <line x1="260" y1="32" x2="380" y2="32" stroke="#C8A961" stroke-width="1.5"/>
+    <circle cx="220" cy="32" r="3" fill="#C8A961"/>
+    <text x="220" y="78" text-anchor="middle" font-family="'Bebas Neue','Oswald','Segoe UI',sans-serif" font-size="55" fill="#E8D5A3" letter-spacing="10">VALMOJADO</text>
+    <line x1="40" y1="87" x2="400" y2="87" stroke="#2D4A2D" stroke-width="2"/>
   </svg>
   <div class="header-text">
     <h1>DASHBOARD VALMOJADO</h1>
