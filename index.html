@@ -285,6 +285,11 @@ function filterTable(tableId, inputId) {
     animales.forEach(a => { if (!byFinca[a.finca]) byFinca[a.finca] = []; byFinca[a.finca].push(a); });
     const fincaCounts = FINCA_NAMES.map(f => (byFinca[f] || []).length);
 
+    // Kg por finca
+    const kgByFinca = FINCA_NAMES.map(f => (byFinca[f] || []).reduce((s, a) => s + (parseFloat(a.ultimo_peso) || 0), 0));
+    const totalKg = kgByFinca.reduce((s, v) => s + v, 0);
+    const conPeso = animales.filter(a => a.ultimo_peso && parseFloat(a.ultimo_peso) > 0).length;
+
     // By estado
     const categorias = {};
     animales.forEach(a => { const c = a.estado || 'Sin categoría'; categorias[c] = (categorias[c] || 0) + 1; });
@@ -418,6 +423,8 @@ function filterTable(tableId, inputId) {
       `<div class="kpi-card highlight"><div class="label">Total Hato</div><div class="value">${fmt(total)}</div><div class="detail">4 fincas consolidadas</div></div>` +
       FINCA_NAMES.map((f, i) => `<div class="kpi-card"><div class="label">${f}</div><div class="value" style="color:${FINCA_COLORS[i]}">${fmt(fincaCounts[i])}</div><div class="detail">${pct(fincaCounts[i], total)} del hato</div></div>`).join('') +
       `<div class="kpi-card"><div class="label">IEP Promedio</div><div class="value" style="color:var(--red)">${avgIEP}d</div><div class="detail">Ideal: 420d | Brecha: +${avgIEP - 420}d</div></div>` +
+      `<div class="kpi-card highlight"><div class="label">Biomasa Total</div><div class="value" style="color:var(--accent)">${fmt(Math.round(totalKg))} kg</div><div class="detail">${fmt(conPeso)}/${fmt(total)} con peso (${pct(conPeso, total)})</div></div>` +
+      FINCA_NAMES.map((f, i) => `<div class="kpi-card"><div class="label">${f} (kg)</div><div class="value" style="color:${FINCA_COLORS[i]}">${fmt(Math.round(kgByFinca[i]))}</div><div class="detail">${pct(kgByFinca[i], totalKg)} del peso total</div></div>`).join('') +
       `<div class="kpi-card"><div class="label">Nacimientos</div><div class="value" style="color:var(--green)">${fmt(nacimientos.length)}</div><div class="detail">H: ${nacH} | M: ${nacM}</div></div>` +
       `<div class="kpi-card"><div class="label">Mortalidad</div><div class="value" style="color:var(--red)">${fmt(mortalidad.length)}</div><div class="detail">Últimos 60d: ${mort60}</div></div>`;
 
