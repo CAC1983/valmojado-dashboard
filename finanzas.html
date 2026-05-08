@@ -275,19 +275,31 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       <div class="section-title">VENTA MATADERO</div>
       <div class="chart-grid">
         <div class="chart-box">
-          <h3>Ventas 2026 por Fecha (USD)</h3>
-          <div class="chart-container"><canvas id="chartVentas"></canvas></div>
+          <h3>Comparativo Anual — 2025 vs 2026 (USD)</h3>
+          <div class="chart-container"><canvas id="chartVentasComp"></canvas></div>
         </div>
         <div class="chart-box">
-          <h3>Animales Vendidos 2026 — Machos vs Hembras</h3>
+          <h3>USD Mensual — 2025 vs 2026</h3>
+          <div class="chart-container"><canvas id="chartVentasMensual"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-box">
+          <h3>Animales Vendidos — 2025 vs 2026</h3>
+          <div class="chart-container"><canvas id="chartVentasAnimales"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3>Machos vs Hembras por Ano</h3>
           <div class="chart-container"><canvas id="chartVentasSexo"></canvas></div>
         </div>
       </div>
+
+      <!-- 2026 Detail -->
       <div class="chart-box" style="margin-bottom:20px;">
-        <h3>Detalle de Ventas 2026</h3>
+        <h3>Detalle Ventas 2026</h3>
         <table class="fin-table">
           <thead>
-            <tr><th>Fecha</th><th class="num">Machos</th><th class="num">Hembras</th><th class="num">Total USD</th><th>Notas</th></tr>
+            <tr><th>Fecha</th><th class="num">Machos</th><th class="num">Hembras</th><th class="num">Total USD</th><th>Tipo</th></tr>
           </thead>
           <tbody>
             <tr><td>12 Ene 2026</td><td class="num">—</td><td class="num">50</td><td class="num">$45,370</td><td>Bufalas descarte</td></tr>
@@ -298,21 +310,40 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
           </tbody>
         </table>
       </div>
+
+      <!-- 2025 Detail -->
       <div class="chart-box" style="margin-bottom:20px;">
-        <h3>Resumen Ventas 2025 (referencia)</h3>
+        <h3>Detalle Ventas 2025</h3>
         <table class="fin-table">
           <thead>
-            <tr><th>Periodo</th><th class="num">Machos</th><th class="num">Hembras</th><th class="num">Total USD</th></tr>
+            <tr><th>Fecha</th><th class="num">Machos</th><th class="num">Hembras</th><th class="num">Total USD</th><th>Tipo</th></tr>
           </thead>
           <tbody>
-            <tr><td>Feb 2025</td><td class="num">—</td><td class="num">60</td><td class="num">$39,485</td></tr>
-            <tr><td>Mar 2025</td><td class="num">39</td><td class="num">17</td><td class="num">$48,579</td></tr>
-            <tr><td>Abr 2025</td><td class="num">3</td><td class="num">—</td><td class="num">$5,891</td></tr>
-            <tr><td>May 2025</td><td class="num">6</td><td class="num">63</td><td class="num">$63,778</td></tr>
-            <tr><td>Jun 2025</td><td class="num">3</td><td class="num">46</td><td class="num">$44,772</td></tr>
-            <tr><td>Ago 2025</td><td class="num">58</td><td class="num">18</td><td class="num">$85,395</td></tr>
-            <tr><td>Oct 2025</td><td class="num">2</td><td class="num">24</td><td class="num">$28,156</td></tr>
-            <tr class="total"><td>TOTAL 2025</td><td class="num">111</td><td class="num">228</td><td class="num">$310,164</td></tr>
+            <tr><td>Feb 2025</td><td class="num">—</td><td class="num">60</td><td class="num">$39,485</td><td>Bufalas descarte</td></tr>
+            <tr><td>Mar 2025</td><td class="num">39</td><td class="num">17</td><td class="num">$48,579</td><td>Mixto (descarte + gordos)</td></tr>
+            <tr><td>Abr 2025</td><td class="num">3</td><td class="num">—</td><td class="num">$5,891</td><td>Bufalos</td></tr>
+            <tr><td>May 2025</td><td class="num">6</td><td class="num">63</td><td class="num">$63,778</td><td>Mixto</td></tr>
+            <tr><td>Jun 2025</td><td class="num">3</td><td class="num">46</td><td class="num">$44,772</td><td>Mixto</td></tr>
+            <tr><td>Ago 2025</td><td class="num">58</td><td class="num">18</td><td class="num">$85,395</td><td>Mayoría bufalos gordos</td></tr>
+            <tr><td>Oct 2025</td><td class="num">2</td><td class="num">24</td><td class="num">$28,156</td><td>Mixto</td></tr>
+            <tr class="total"><td>TOTAL 2025</td><td class="num">111</td><td class="num">228</td><td class="num">$310,164</td><td>339 animales</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Comparison -->
+      <div class="chart-box" style="margin-bottom:20px;">
+        <h3>Comparativo 2025 vs 2026</h3>
+        <table class="fin-table">
+          <thead>
+            <tr><th>Concepto</th><th class="num">2025</th><th class="num">2026 (Ene-Abr)</th><th class="num">Variacion</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Ingresos USD</td><td class="num">$310,164</td><td class="num">$196,727</td><td class="num" style="color:var(--green)">63% del 2025 en 4 meses</td></tr>
+            <tr><td>Total animales</td><td class="num">339</td><td class="num">216</td><td class="num" style="color:var(--green)">64% del 2025 en 4 meses</td></tr>
+            <tr><td>Machos vendidos</td><td class="num">111</td><td class="num">50</td><td class="num">45%</td></tr>
+            <tr><td>Hembras vendidas (descarte)</td><td class="num">228</td><td class="num">166</td><td class="num">73%</td></tr>
+            <tr><td>Promedio USD/animal</td><td class="num">$915</td><td class="num">$911</td><td class="num">Similar</td></tr>
           </tbody>
         </table>
       </div>
@@ -591,30 +622,71 @@ function initCharts() {
     }
   });
 
-  // ═══ VENTAS 2026 ═══
-  new Chart(document.getElementById('chartVentas'), {
+  // ═══ VENTAS COMPARATIVO ANUAL ═══
+  new Chart(document.getElementById('chartVentasComp'), {
     type:'bar',
     data:{
-      labels:['12 Ene','29 Ene','06 Mar','16 Abr'],
-      datasets:[{ label:'USD', data:[45370,56786,42193,52378], backgroundColor:[C.accent+'CC',C.accent+'CC',C.accent+'CC',C.green+'CC'], borderColor:[C.accent,C.accent,C.accent,C.green], borderWidth:1 }]
+      labels:['2025 (ano completo)','2026 (Ene-Abr)'],
+      datasets:[
+        { label:'Hembras USD', data:[208790,144349], backgroundColor:C.accent+'CC', borderColor:C.accent, borderWidth:1 },
+        { label:'Machos USD', data:[101374,52378], backgroundColor:C.green+'CC', borderColor:C.green, borderWidth:1 },
+      ]
     },
     options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => '$'+fmt(ctx.raw) } } },
+      plugins:{ tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+': $'+fmt(ctx.raw) } } },
+      scales:{ y:{ stacked:true, ticks:{ callback: v => '$'+fmt(v) } }, x:{ stacked:true } }
+    }
+  });
+
+  // ═══ VENTAS MENSUAL 2025 vs 2026 ═══
+  new Chart(document.getElementById('chartVentasMensual'), {
+    type:'bar',
+    data:{
+      labels: months12,
+      datasets:[
+        { label:'2025', data:[0,39485,48579,5891,63778,44772,0,85395,0,28156,0,0], backgroundColor:C.sage+'AA', borderColor:C.sage, borderWidth:1 },
+        { label:'2026', data:[102156,0,42193,52378,null,null,null,null,null,null,null,null], backgroundColor:C.accent+'CC', borderColor:C.accent, borderWidth:1 },
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+': $'+fmt(ctx.raw) } } },
       scales:{ y:{ ticks:{ callback: v => '$'+fmt(v) } } }
     }
   });
 
-  // ═══ VENTAS SEXO ═══
-  new Chart(document.getElementById('chartVentasSexo'), {
-    type:'doughnut',
+  // ═══ VENTAS ANIMALES COMPARATIVO ═══
+  new Chart(document.getElementById('chartVentasAnimales'), {
+    type:'bar',
     data:{
-      labels:['Hembras (descarte)','Machos'],
-      datasets:[{ data:[166,50], backgroundColor:[C.accent+'CC',C.green+'CC'], borderColor:'#162016', borderWidth:2 }]
+      labels: months12,
+      datasets:[
+        { label:'2025', data:[0,60,56,3,69,49,0,76,0,26,0,0], backgroundColor:C.sage+'AA', borderColor:C.sage, borderWidth:1 },
+        { label:'2026', data:[116,0,50,50,null,null,null,null,null,null,null,null], backgroundColor:C.accent+'CC', borderColor:C.accent, borderWidth:1 },
+      ]
     },
     options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'bottom' }, tooltip:{ callbacks:{ label: ctx => ctx.label+': '+ctx.raw+' animales' } } }
+      plugins:{ tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+': '+ctx.raw+' animales' } } },
+      scales:{ y:{ ticks:{ callback: v => v+' cab' } } }
+    }
+  });
+
+  // ═══ VENTAS SEXO POR ANO ═══
+  new Chart(document.getElementById('chartVentasSexo'), {
+    type:'bar',
+    data:{
+      labels:['2025','2026'],
+      datasets:[
+        { label:'Hembras', data:[228,166], backgroundColor:C.accent+'CC', borderColor:C.accent, borderWidth:1 },
+        { label:'Machos', data:[111,50], backgroundColor:C.green+'CC', borderColor:C.green, borderWidth:1 },
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+': '+ctx.raw+' cabezas' } } },
+      scales:{ y:{ stacked:true, ticks:{ callback: v => v+' cab' } }, x:{ stacked:true } }
     }
   });
 
