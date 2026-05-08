@@ -86,6 +86,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
 .chart-box.full { grid-column:1/-1; }
 .chart-box h3 { color:var(--text); font-size:13px; font-weight:600; margin-bottom:16px; }
 .chart-container { position:relative; height:300px; }
+.chart-container.tall { height:380px; }
 
 /* Table */
 .fin-table { width:100%; border-collapse:collapse; font-size:13px; }
@@ -120,7 +121,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
 <div id="login-gate">
   <div class="login-box">
     <svg viewBox="0 0 440 95" xmlns="http://www.w3.org/2000/svg">
-      <text x="220" y="24" text-anchor="middle" font-family="'Montserrat','Segoe UI',sans-serif" font-size="11" fill="#C8A961" letter-spacing="5" font-weight="600">AGROPECUARIA Y GANADERÍA</text>
+      <text x="220" y="24" text-anchor="middle" font-family="'Montserrat','Segoe UI',sans-serif" font-size="11" fill="#C8A961" letter-spacing="5" font-weight="600">AGROPECUARIA Y GANADERIA</text>
       <line x1="60" y1="32" x2="180" y2="32" stroke="#C8A961" stroke-width="1.5"/>
       <line x1="260" y1="32" x2="380" y2="32" stroke="#C8A961" stroke-width="1.5"/>
       <circle cx="220" cy="32" r="3" fill="#C8A961"/>
@@ -128,9 +129,9 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       <line x1="40" y1="87" x2="400" y2="87" stroke="#2D4A2D" stroke-width="2"/>
     </svg>
     <h2>DASHBOARD FINANCIERO</h2>
-    <input type="password" id="pw-input" placeholder="Contraseña" autocomplete="off">
+    <input type="password" id="pw-input" placeholder="Contrasena" autocomplete="off">
     <button onclick="tryLogin()">ENTRAR</button>
-    <div class="login-error" id="login-error">Contraseña incorrecta</div>
+    <div class="login-error" id="login-error">Contrasena incorrecta</div>
   </div>
 </div>
 
@@ -138,7 +139,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
 <div id="dashboard">
   <div class="header">
     <svg viewBox="0 0 440 95" xmlns="http://www.w3.org/2000/svg">
-      <text x="220" y="24" text-anchor="middle" font-family="'Montserrat','Segoe UI',sans-serif" font-size="11" fill="#C8A961" letter-spacing="5" font-weight="600">AGROPECUARIA Y GANADERÍA</text>
+      <text x="220" y="24" text-anchor="middle" font-family="'Montserrat','Segoe UI',sans-serif" font-size="11" fill="#C8A961" letter-spacing="5" font-weight="600">AGROPECUARIA Y GANADERIA</text>
       <line x1="60" y1="32" x2="180" y2="32" stroke="#C8A961" stroke-width="1.5"/>
       <line x1="260" y1="32" x2="380" y2="32" stroke="#C8A961" stroke-width="1.5"/>
       <circle cx="220" cy="32" r="3" fill="#C8A961"/>
@@ -155,86 +156,196 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
 
     <!-- ALERTS -->
     <div class="alert-bar">
-      <strong>Resultado acumulado Ene-Abr:</strong> Pérdida de Bs. 17,960 — pero <strong>abril fue positivo (+24,628)</strong>, la tendencia está mejorando.<br>
-      <strong>CxP Accionistas:</strong> Bs. 387,868 pendientes (Nicolas: 328,342 | Carlos: 22,356 | Familia: 37,171).<br>
+      <strong>Ingreso total USD Ene-Abr 2026:</strong> $404,208 (Leche $207,481 + Venta animales $196,727).<br>
+      <strong>Produccion de leche en caida:</strong> 250,787 litros YTD vs 314,336 en mismo periodo 2024. Promedio lt/bufala/dia: 2.65 (era 3.43 en 2024).<br>
+      <strong>Resultado contable Bs.:</strong> Perdida de Bs. 17,960 — pero abril fue positivo (+24,628).<br>
       <strong>Efectivo disponible:</strong> Bs. 940,515 en bancos (~$7,554 USD).
     </div>
 
     <!-- KPI CARDS -->
     <div class="kpi-row">
       <div class="kpi-card">
-        <div class="label">INGRESOS ACUMULADOS</div>
-        <div class="value neutral">Bs. 282,032</div>
-        <div class="sub">Venta de leche Ene-Abr 2026</div>
+        <div class="label">INGRESO TOTAL USD</div>
+        <div class="value positive">$404,208</div>
+        <div class="sub">Leche + Venta animales Ene-Abr</div>
       </div>
       <div class="kpi-card">
-        <div class="label">GASTOS ACUMULADOS</div>
-        <div class="value negative">Bs. 299,992</div>
-        <div class="sub">Costos + gastos operativos</div>
+        <div class="label">INGRESO LECHE USD</div>
+        <div class="value neutral">$207,481</div>
+        <div class="sub">250,787 litros Ene-Abr</div>
       </div>
       <div class="kpi-card">
-        <div class="label">RESULTADO NETO</div>
+        <div class="label">VENTA ANIMALES USD</div>
+        <div class="value neutral">$196,727</div>
+        <div class="sub">50 machos + 166 hembras</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">RESULTADO NETO Bs.</div>
         <div class="value negative">-Bs. 17,960</div>
-        <div class="sub">Pérdida acumulada</div>
+        <div class="sub">Perdida contable acumulada</div>
       </div>
       <div class="kpi-card">
         <div class="label">EFECTIVO EN BANCOS</div>
-        <div class="value positive">$7,554</div>
+        <div class="value positive">$7,678</div>
         <div class="sub">Bs. 940,515 | Tasa 124.51</div>
       </div>
       <div class="kpi-card">
-        <div class="label">TOTAL ACTIVOS</div>
-        <div class="value neutral">Bs. 2,022,219</div>
-        <div class="sub">Corrientes + No corrientes</div>
-      </div>
-      <div class="kpi-card">
-        <div class="label">TOTAL PASIVOS</div>
-        <div class="value negative">Bs. 1,722,219</div>
-        <div class="sub">CxP comerciales + accionistas</div>
+        <div class="label">LT/BUFALA/DIA</div>
+        <div class="value negative">2.65</div>
+        <div class="sub">Era 3.43 en 2024 — bajando</div>
       </div>
     </div>
 
-    <!-- SECTION 1: P&L MENSUAL -->
+    <!-- ═══ SECTION: INGRESOS USD ═══ -->
     <div class="section">
-      <div class="section-title">ESTADO DE RESULTADOS MENSUAL</div>
+      <div class="section-title">INGRESOS EN USD</div>
       <div class="chart-grid">
         <div class="chart-box full">
+          <h3>Ingresos Mensuales USD — Leche vs Venta de Animales (2026)</h3>
+          <div class="chart-container"><canvas id="chartIngresosUSD"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box" style="margin-bottom:20px;">
+        <h3>Detalle de Ingresos USD 2026</h3>
+        <div style="overflow-x:auto;">
+        <table class="fin-table">
+          <thead>
+            <tr><th>Mes</th><th class="num">Leche (litros)</th><th class="num">Leche (USD)</th><th class="num">Venta Animales (USD)</th><th class="num">Total USD</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Enero</td><td class="num">72,106</td><td class="num">$64,626</td><td class="num">$102,156</td><td class="num">$166,782</td></tr>
+            <tr><td>Febrero</td><td class="num">69,766</td><td class="num">$53,117</td><td class="num">—</td><td class="num">$53,117</td></tr>
+            <tr><td>Marzo</td><td class="num">62,442</td><td class="num">$50,795</td><td class="num">$42,193</td><td class="num">$92,988</td></tr>
+            <tr><td>Abril</td><td class="num">46,473</td><td class="num">$38,943</td><td class="num">$52,378</td><td class="num">$91,321</td></tr>
+            <tr class="total"><td>TOTAL</td><td class="num">250,787</td><td class="num">$207,481</td><td class="num">$196,727</td><td class="num">$404,208</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION: PRODUCCION DE LECHE HISTORICA ═══ -->
+    <div class="section">
+      <div class="section-title">PRODUCCION DE LECHE — HISTORICO</div>
+      <div class="chart-grid">
+        <div class="chart-box full">
+          <h3>Litros Anuales (2016-2026)</h3>
+          <div class="chart-container"><canvas id="chartLecheAnual"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-box">
+          <h3>Comparativo Mensual — 2024 vs 2025 vs 2026 (litros)</h3>
+          <div class="chart-container tall"><canvas id="chartLecheMensual"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3>Promedio Litros/Bufala/Dia por Ano</h3>
+          <div class="chart-container tall"><canvas id="chartPromedio"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box" style="margin-bottom:20px;">
+        <h3>Ingreso por Leche USD — Historico Mensual (2024-2026)</h3>
+        <div style="overflow-x:auto;">
+        <table class="fin-table">
+          <thead>
+            <tr><th>Mes</th><th class="num">2024 Litros</th><th class="num">2024 USD</th><th class="num">2025 Litros</th><th class="num">2025 USD</th><th class="num">2026 Litros</th><th class="num">2026 USD</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Enero</td><td class="num">90,922</td><td class="num">$53,230</td><td class="num">75,407</td><td class="num">$30,856</td><td class="num">72,106</td><td class="num">$64,626</td></tr>
+            <tr><td>Febrero</td><td class="num">76,789</td><td class="num">$50,091</td><td class="num">76,523</td><td class="num">$33,314</td><td class="num">69,766</td><td class="num">$53,117</td></tr>
+            <tr><td>Marzo</td><td class="num">72,073</td><td class="num">$42,684</td><td class="num">66,648</td><td class="num">$30,325</td><td class="num">62,442</td><td class="num">$50,795</td></tr>
+            <tr><td>Abril</td><td class="num">74,552</td><td class="num">$54,140</td><td class="num">54,420</td><td class="num">$22,045</td><td class="num">46,473</td><td class="num">$38,943</td></tr>
+            <tr><td>Mayo</td><td class="num">71,616</td><td class="num">$51,733</td><td class="num">64,583</td><td class="num">$28,366</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Junio</td><td class="num">94,290</td><td class="num">$53,905</td><td class="num">72,982</td><td class="num">$29,272</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Julio</td><td class="num">80,686</td><td class="num">$50,297</td><td class="num">55,358</td><td class="num">$25,066</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Agosto</td><td class="num">67,891</td><td class="num">$40,826</td><td class="num">43,875</td><td class="num">$18,683</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Septiembre</td><td class="num">57,017</td><td class="num">$37,779</td><td class="num">30,595</td><td class="num">$15,661</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Octubre</td><td class="num">59,060</td><td class="num">$38,091</td><td class="num">18,090</td><td class="num">$10,758</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Noviembre</td><td class="num">59,066</td><td class="num">$35,563</td><td class="num">50,509</td><td class="num">$23,237</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr><td>Diciembre</td><td class="num">72,756</td><td class="num">$39,306</td><td class="num">68,220</td><td class="num">$43,805</td><td class="num">—</td><td class="num">—</td></tr>
+            <tr class="total"><td>TOTAL</td><td class="num">876,718</td><td class="num">$547,643</td><td class="num">677,210</td><td class="num">$311,388</td><td class="num">250,787</td><td class="num">$207,481</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION: VENTA DE ANIMALES ═══ -->
+    <div class="section">
+      <div class="section-title">VENTA DE ANIMALES</div>
+      <div class="chart-grid">
+        <div class="chart-box">
+          <h3>Ventas 2026 por Fecha (USD)</h3>
+          <div class="chart-container"><canvas id="chartVentas"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3>Animales Vendidos 2026 — Machos vs Hembras</h3>
+          <div class="chart-container"><canvas id="chartVentasSexo"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box" style="margin-bottom:20px;">
+        <h3>Detalle de Ventas 2026</h3>
+        <table class="fin-table">
+          <thead>
+            <tr><th>Fecha</th><th class="num">Machos</th><th class="num">Hembras</th><th class="num">Total USD</th><th>Notas</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>12 Ene 2026</td><td class="num">—</td><td class="num">50</td><td class="num">$45,370</td><td>Bufalas descarte</td></tr>
+            <tr><td>29 Ene 2026</td><td class="num">—</td><td class="num">66</td><td class="num">$56,786</td><td>Bufalas descarte</td></tr>
+            <tr><td>06 Mar 2026</td><td class="num">—</td><td class="num">50</td><td class="num">$42,193</td><td>Bufalas descarte</td></tr>
+            <tr><td>16 Abr 2026</td><td class="num">50</td><td class="num">—</td><td class="num">$52,378</td><td>Bufalos</td></tr>
+            <tr class="total"><td>TOTAL 2026</td><td class="num">50</td><td class="num">166</td><td class="num">$196,727</td><td>216 animales</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chart-box" style="margin-bottom:20px;">
+        <h3>Resumen Ventas 2025 (referencia)</h3>
+        <table class="fin-table">
+          <thead>
+            <tr><th>Periodo</th><th class="num">Machos</th><th class="num">Hembras</th><th class="num">Total USD</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Feb 2025</td><td class="num">—</td><td class="num">60</td><td class="num">$39,485</td></tr>
+            <tr><td>Mar 2025</td><td class="num">39</td><td class="num">17</td><td class="num">$48,579</td></tr>
+            <tr><td>Abr 2025</td><td class="num">3</td><td class="num">—</td><td class="num">$5,891</td></tr>
+            <tr><td>May 2025</td><td class="num">6</td><td class="num">63</td><td class="num">$63,778</td></tr>
+            <tr><td>Jun 2025</td><td class="num">3</td><td class="num">46</td><td class="num">$44,772</td></tr>
+            <tr><td>Ago 2025</td><td class="num">58</td><td class="num">18</td><td class="num">$85,395</td></tr>
+            <tr><td>Oct 2025</td><td class="num">2</td><td class="num">24</td><td class="num">$28,156</td></tr>
+            <tr class="total"><td>TOTAL 2025</td><td class="num">111</td><td class="num">228</td><td class="num">$310,164</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION: P&L MENSUAL Bs ═══ -->
+    <div class="section">
+      <div class="section-title">ESTADO DE RESULTADOS MENSUAL (Bs.)</div>
+      <div class="chart-grid">
+        <div class="chart-box">
           <h3>Ingresos vs Gastos por Mes (Bs.)</h3>
           <div class="chart-container"><canvas id="chartPL"></canvas></div>
         </div>
-      </div>
-    </div>
-
-    <!-- SECTION 2: RESULTADO NETO -->
-    <div class="section">
-      <div class="section-title">RESULTADO NETO MENSUAL</div>
-      <div class="chart-grid">
         <div class="chart-box">
-          <h3>Utilidad / Pérdida por Mes (Bs.)</h3>
+          <h3>Resultado Neto Mensual (Bs.)</h3>
           <div class="chart-container"><canvas id="chartNet"></canvas></div>
         </div>
-        <div class="chart-box">
-          <h3>Resultado Acumulado (Bs.)</h3>
-          <div class="chart-container"><canvas id="chartCum"></canvas></div>
-        </div>
       </div>
     </div>
 
-    <!-- SECTION 3: DESGLOSE DE GASTOS -->
+    <!-- ═══ SECTION: DESGLOSE DE GASTOS ═══ -->
     <div class="section">
-      <div class="section-title">DESGLOSE DE GASTOS</div>
+      <div class="section-title">DESGLOSE DE GASTOS (Bs.)</div>
       <div class="chart-grid">
         <div class="chart-box">
-          <h3>Top Gastos Acumulados (Bs.)</h3>
-          <div class="chart-container"><canvas id="chartGastos"></canvas></div>
+          <h3>Top Gastos Acumulados</h3>
+          <div class="chart-container tall"><canvas id="chartGastos"></canvas></div>
         </div>
         <div class="chart-box">
-          <h3>Distribución de Gastos (%)</h3>
-          <div class="chart-container"><canvas id="chartGastosPie"></canvas></div>
+          <h3>Distribucion de Gastos (%)</h3>
+          <div class="chart-container tall"><canvas id="chartGastosPie"></canvas></div>
         </div>
       </div>
-
-      <!-- Gastos detail table -->
       <div class="chart-box" style="margin-bottom:20px;">
         <h3>Detalle Mensual de Gastos (Bs.)</h3>
         <div style="overflow-x:auto;">
@@ -247,15 +358,15 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
             <tr><td>Sanidad animal</td><td class="num">10,000</td><td class="num">614</td><td class="num">7,158</td><td class="num">23,061</td><td class="num">40,833</td></tr>
             <tr><td>Caja chica</td><td class="num">4,626</td><td class="num">6,099</td><td class="num">4,752</td><td class="num">5,215</td><td class="num">20,692</td></tr>
             <tr><td>Combustible</td><td class="num">0</td><td class="num">9,000</td><td class="num">9,000</td><td class="num">251</td><td class="num">18,251</td></tr>
-            <tr><td>Vehículos (mant.)</td><td class="num">2,530</td><td class="num">1,747</td><td class="num">7,859</td><td class="num">6,160</td><td class="num">18,295</td></tr>
+            <tr><td>Vehiculos (mant.)</td><td class="num">2,530</td><td class="num">1,747</td><td class="num">7,859</td><td class="num">6,160</td><td class="num">18,295</td></tr>
             <tr><td>Edificaciones (mant.)</td><td class="num">3,871</td><td class="num">3,610</td><td class="num">2,073</td><td class="num">6,889</td><td class="num">16,443</td></tr>
             <tr><td>Alimento animales</td><td class="num">0</td><td class="num">0</td><td class="num">8,200</td><td class="num">8,200</td><td class="num">16,400</td></tr>
-            <tr><td>Contribución pensiones</td><td class="num">1,525</td><td class="num">1,235</td><td class="num">1,798</td><td class="num">1,960</td><td class="num">6,518</td></tr>
+            <tr><td>Contribucion pensiones</td><td class="num">1,525</td><td class="num">1,235</td><td class="num">1,798</td><td class="num">1,960</td><td class="num">6,518</td></tr>
             <tr><td>ISLR + retenciones</td><td class="num">550</td><td class="num">371</td><td class="num">4,610</td><td class="num">767</td><td class="num">6,297</td></tr>
             <tr><td>Fletes</td><td class="num">241</td><td class="num">1,152</td><td class="num">2,151</td><td class="num">2,600</td><td class="num">6,143</td></tr>
-            <tr><td>Boletos aéreos</td><td class="num">1,687</td><td class="num">1,478</td><td class="num">1,498</td><td class="num">1,102</td><td class="num">5,766</td></tr>
+            <tr><td>Boletos aereos</td><td class="num">1,687</td><td class="num">1,478</td><td class="num">1,498</td><td class="num">1,102</td><td class="num">5,766</td></tr>
             <tr><td>Alquiler locales</td><td class="num">1,260</td><td class="num">1,270</td><td class="num">1,260</td><td class="num">1,270</td><td class="num">5,060</td></tr>
-            <tr><td>Depreciación vehículos</td><td class="num">1,262</td><td class="num">1,262</td><td class="num">1,262</td><td class="num">1,262</td><td class="num">5,049</td></tr>
+            <tr><td>Depreciacion vehiculos</td><td class="num">1,262</td><td class="num">1,262</td><td class="num">1,262</td><td class="num">1,262</td><td class="num">5,049</td></tr>
             <tr><td>Tramitaciones</td><td class="num">570</td><td class="num">379</td><td class="num">1,375</td><td class="num">1,407</td><td class="num">3,731</td></tr>
             <tr><td>Otros gastos menores</td><td class="num">3,049</td><td class="num">1,572</td><td class="num">1,293</td><td class="num">3,269</td><td class="num">9,183</td></tr>
             <tr class="total"><td>TOTAL GASTOS</td><td class="num">46,375</td><td class="num">51,370</td><td class="num">74,336</td><td class="num">80,437</td><td class="num">252,518</td></tr>
@@ -265,7 +376,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       </div>
     </div>
 
-    <!-- SECTION 4: BANCOS -->
+    <!-- ═══ SECTION: BANCOS ═══ -->
     <div class="section">
       <div class="section-title">SALDOS BANCARIOS</div>
       <div class="chart-grid">
@@ -278,7 +389,6 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
           <div class="chart-container"><canvas id="chartBancosUSD"></canvas></div>
         </div>
       </div>
-
       <div class="chart-box" style="margin-bottom:20px;">
         <h3>Detalle de Cuentas Bancarias</h3>
         <table class="fin-table">
@@ -298,7 +408,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       </div>
     </div>
 
-    <!-- SECTION 5: BALANCE GENERAL -->
+    <!-- ═══ SECTION: BALANCE GENERAL ═══ -->
     <div class="section">
       <div class="section-title">BALANCE GENERAL</div>
       <div class="chart-grid">
@@ -311,7 +421,6 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
           <div class="chart-container"><canvas id="chartPasivos"></canvas></div>
         </div>
       </div>
-
       <div class="chart-grid">
         <div class="chart-box">
           <h3>Activos</h3>
@@ -321,7 +430,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
               <tr><td>Efectivo en bancos</td><td class="num">56,503</td></tr>
               <tr><td>Anticipo a proveedores</td><td class="num">358,325</td></tr>
               <tr><td>CxC Relacionadas</td><td class="num">1,246</td></tr>
-              <tr><td>Inventario mercancía</td><td class="num">659,038</td></tr>
+              <tr><td>Inventario mercancia</td><td class="num">659,038</td></tr>
               <tr class="total"><td>Total Activos Corrientes</td><td class="num">1,075,112</td></tr>
               <tr><td>Gastos preoperativos</td><td class="num">647,107</td></tr>
               <tr><td>Mobiliario y equipos</td><td class="num">300,000</td></tr>
@@ -350,12 +459,12 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       </div>
     </div>
 
-    <!-- SECTION 6: CXP ACCIONISTAS -->
+    <!-- ═══ SECTION: CXP ACCIONISTAS ═══ -->
     <div class="section">
       <div class="section-title">CUENTAS POR PAGAR A ACCIONISTAS</div>
       <div class="chart-grid">
         <div class="chart-box">
-          <h3>Distribución CxP Accionistas (Bs.)</h3>
+          <h3>Distribucion CxP Accionistas (Bs.)</h3>
           <div class="chart-container"><canvas id="chartCXP"></canvas></div>
         </div>
         <div class="chart-box">
@@ -363,9 +472,9 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
           <table class="fin-table">
             <thead><tr><th>Accionista</th><th class="num">Monto Bs.</th><th class="num">% del Total</th></tr></thead>
             <tbody>
-              <tr><td>Nicolas Fernández de Caleya</td><td class="num">328,342</td><td class="num">84.7%</td></tr>
+              <tr><td>Nicolas Fernandez de Caleya</td><td class="num">328,342</td><td class="num">84.7%</td></tr>
               <tr><td>Familia Caleya</td><td class="num">37,171</td><td class="num">9.6%</td></tr>
-              <tr><td>Carlos Fernández de Caleya</td><td class="num">22,356</td><td class="num">5.8%</td></tr>
+              <tr><td>Carlos Fernandez de Caleya</td><td class="num">22,356</td><td class="num">5.8%</td></tr>
               <tr class="total"><td>TOTAL</td><td class="num">387,868</td><td class="num">100%</td></tr>
             </tbody>
           </table>
@@ -375,15 +484,14 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
 
     <!-- Footer -->
     <div style="text-align:center; padding:32px; color:var(--text2); font-size:11px; letter-spacing:1px;">
-      AGROPECUARIA Y GANADERÍA VALMOJADO — DASHBOARD FINANCIERO<br>
-      Datos al 30 de Abril 2026 — Generado el 07/05/2026 — CONFIDENCIAL
+      AGROPECUARIA Y GANADERIA VALMOJADO — DASHBOARD FINANCIERO<br>
+      Datos al 30 de Abril 2026 — Actualizado 08/05/2026 — CONFIDENCIAL
     </div>
   </div>
 </div>
 
 <script>
 // ═══ PASSWORD ═══
-const HASH = '5a9d2f8e7c3b1d6a4e8f2c9b5d7a3e1f'; // placeholder, using simple check
 function tryLogin() {
   const pw = document.getElementById('pw-input').value;
   if (pw === 'valmojado2026') {
@@ -405,18 +513,118 @@ Chart.defaults.font.family = "'Montserrat',sans-serif";
 Chart.defaults.font.size = 11;
 
 const months = ['Enero','Febrero','Marzo','Abril'];
+const months12 = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 const C = { accent:'#C8A961', green:'#5BA55B', red:'#D4544A', blue:'#4A7AB5', orange:'#D47A3A', sage:'#8B9E7B', yellow:'#D4A84B', purple:'#8B6BBF', pink:'#C75E8A', teal:'#4AB5A5' };
 
 function fmt(n) { return n.toLocaleString('es-VE', {maximumFractionDigits:0}); }
 
 function initCharts() {
-  // 1. P&L Mensual
+
+  // ═══ INGRESOS USD ═══
+  new Chart(document.getElementById('chartIngresosUSD'), {
+    type:'bar',
+    data:{
+      labels: months,
+      datasets:[
+        { label:'Leche (USD)', data:[64626,53117,50795,38943], backgroundColor:'rgba(91,165,91,0.8)', borderColor:C.green, borderWidth:1 },
+        { label:'Venta Animales (USD)', data:[102156,0,42193,52378], backgroundColor:'rgba(200,169,97,0.8)', borderColor:C.accent, borderWidth:1 },
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+': $'+fmt(ctx.raw) } } },
+      scales:{ y:{ stacked:true, ticks:{ callback: v => '$'+fmt(v) } }, x:{ stacked:true } }
+    }
+  });
+
+  // ═══ LECHE ANUAL ═══
+  const anualYears = ['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026*'];
+  const anualLitros = [1004100,1198781,1130246,934329,751506,605379,741022,686392,876718,677210,250787];
+  new Chart(document.getElementById('chartLecheAnual'), {
+    type:'bar',
+    data:{
+      labels: anualYears,
+      datasets:[{ label:'Litros', data:anualLitros,
+        backgroundColor: anualYears.map((_,i) => i === anualYears.length-1 ? C.accent+'99' : C.green+'AA'),
+        borderColor: anualYears.map((_,i) => i === anualYears.length-1 ? C.accent : C.green),
+        borderWidth:1
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => fmt(ctx.raw)+' litros' } } },
+      scales:{ y:{ ticks:{ callback: v => fmt(v) } } }
+    }
+  });
+
+  // ═══ LECHE MENSUAL COMPARATIVO ═══
+  new Chart(document.getElementById('chartLecheMensual'), {
+    type:'line',
+    data:{
+      labels: months12,
+      datasets:[
+        { label:'2024', data:[90922,76789,72073,74552,71616,94290,80686,67891,57017,59060,59066,72756], borderColor:C.blue, backgroundColor:'transparent', tension:0.3, pointRadius:4 },
+        { label:'2025', data:[75407,76523,66648,54420,64583,72982,55358,43875,30595,18090,50509,68220], borderColor:C.sage, backgroundColor:'transparent', tension:0.3, pointRadius:4 },
+        { label:'2026', data:[72106,69766,62442,46473,null,null,null,null,null,null,null,null], borderColor:C.accent, backgroundColor:'transparent', tension:0.3, pointRadius:6, borderWidth:3 },
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+': '+fmt(ctx.raw)+' lt' } } },
+      scales:{ y:{ ticks:{ callback: v => fmt(v) } } }
+    }
+  });
+
+  // ═══ PROMEDIO LT/BUFALA/DIA ═══
+  const promedioYears = ['2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026*'];
+  const promedioVals = [4.77,4.64,4.34,4.00,3.79,3.81,4.13,3.96,3.43,3.22,2.65];
+  new Chart(document.getElementById('chartPromedio'), {
+    type:'line',
+    data:{
+      labels: promedioYears,
+      datasets:[{ label:'Lt/Bufala/Dia', data:promedioVals, borderColor:C.accent, backgroundColor:'rgba(200,169,97,0.1)', fill:true, tension:0.3, pointRadius:5, pointBackgroundColor: promedioVals.map(v => v < 3.5 ? C.red : v < 4 ? C.yellow : C.green) }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => ctx.raw.toFixed(2)+' lt/buf/dia' } } },
+      scales:{ y:{ min:2, max:5.5, ticks:{ callback: v => v.toFixed(1) } } }
+    }
+  });
+
+  // ═══ VENTAS 2026 ═══
+  new Chart(document.getElementById('chartVentas'), {
+    type:'bar',
+    data:{
+      labels:['12 Ene','29 Ene','06 Mar','16 Abr'],
+      datasets:[{ label:'USD', data:[45370,56786,42193,52378], backgroundColor:[C.accent+'CC',C.accent+'CC',C.accent+'CC',C.green+'CC'], borderColor:[C.accent,C.accent,C.accent,C.green], borderWidth:1 }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => '$'+fmt(ctx.raw) } } },
+      scales:{ y:{ ticks:{ callback: v => '$'+fmt(v) } } }
+    }
+  });
+
+  // ═══ VENTAS SEXO ═══
+  new Chart(document.getElementById('chartVentasSexo'), {
+    type:'doughnut',
+    data:{
+      labels:['Hembras (descarte)','Machos'],
+      datasets:[{ data:[166,50], backgroundColor:[C.accent+'CC',C.green+'CC'], borderColor:'#162016', borderWidth:2 }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ position:'bottom' }, tooltip:{ callbacks:{ label: ctx => ctx.label+': '+ctx.raw+' animales' } } }
+    }
+  });
+
+  // ═══ P&L MENSUAL Bs ═══
   new Chart(document.getElementById('chartPL'), {
     type:'bar',
     data:{
       labels: months,
       datasets:[
-        { label:'Ingresos (Leche)', data:[64895,85372,72328,59436], backgroundColor:'rgba(91,165,91,0.8)', borderColor:C.green, borderWidth:1 },
+        { label:'Ingresos (Leche Bs)', data:[64895,85372,72328,59436], backgroundColor:'rgba(91,165,91,0.8)', borderColor:C.green, borderWidth:1 },
         { label:'Gastos Operativos', data:[46375,51370,74336,80437], backgroundColor:'rgba(212,84,74,0.6)', borderColor:C.red, borderWidth:1 },
       ]
     },
@@ -427,7 +635,7 @@ function initCharts() {
     }
   });
 
-  // 2. Resultado neto mensual
+  // ═══ RESULTADO NETO ═══
   const netData = [-11520, -30003, -1065, 24628];
   new Chart(document.getElementById('chartNet'), {
     type:'bar',
@@ -442,31 +650,13 @@ function initCharts() {
     }
   });
 
-  // 3. Acumulado
-  const cumData = [-11520, -41523, -42588, -17960];
-  new Chart(document.getElementById('chartCum'), {
-    type:'line',
-    data:{
-      labels: months,
-      datasets:[{ label:'Acumulado', data:cumData, borderColor:C.accent, backgroundColor:'rgba(200,169,97,0.1)', fill:true, tension:0.3, pointRadius:6, pointBackgroundColor:C.accent }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => 'Bs. '+fmt(ctx.raw) } } },
-      scales:{ y:{ ticks:{ callback: v => 'Bs. '+fmt(v) } } }
-    }
-  });
-
-  // 4. Top gastos horizontal bar
-  const gastoLabels = ['Sueldos','Sanidad','Caja chica','Combustible','Vehículos','Edificaciones','Alimento','Pensiones','ISLR','Fletes','Boletos','Alquiler','Depreciación','Tramitaciones'];
+  // ═══ TOP GASTOS ═══
+  const gastoLabels = ['Sueldos','Sanidad','Caja chica','Combustible','Vehiculos','Edificaciones','Alimento','Pensiones','ISLR','Fletes','Boletos','Alquiler','Depreciacion','Tramitaciones'];
   const gastoVals = [73858,40833,20692,18251,18295,16443,16400,6518,6297,6143,5766,5060,5049,3731];
   const gastoColors = [C.accent,C.green,C.orange,C.red,C.blue,C.sage,C.yellow,C.purple,C.pink,C.teal,'#6B7ABF','#8BAA3A','#4AAAB5','#B53A5A'];
   new Chart(document.getElementById('chartGastos'), {
     type:'bar',
-    data:{
-      labels: gastoLabels,
-      datasets:[{ data:gastoVals, backgroundColor:gastoColors.map(c => c+'CC'), borderColor:gastoColors, borderWidth:1 }]
-    },
+    data:{ labels: gastoLabels, datasets:[{ data:gastoVals, backgroundColor:gastoColors.map(c => c+'CC'), borderColor:gastoColors, borderWidth:1 }] },
     options:{
       indexAxis:'y', responsive:true, maintainAspectRatio:false,
       plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => 'Bs. '+fmt(ctx.raw) } } },
@@ -474,84 +664,47 @@ function initCharts() {
     }
   });
 
-  // 5. Gastos pie
+  // ═══ GASTOS PIE ═══
   new Chart(document.getElementById('chartGastosPie'), {
     type:'doughnut',
-    data:{
-      labels: gastoLabels,
-      datasets:[{ data:gastoVals, backgroundColor:gastoColors.map(c => c+'CC'), borderColor:'#162016', borderWidth:2 }]
-    },
+    data:{ labels: gastoLabels, datasets:[{ data:gastoVals, backgroundColor:gastoColors.map(c => c+'CC'), borderColor:'#162016', borderWidth:2 }] },
     options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'right', labels:{ boxWidth:12, padding:8, font:{size:10} } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw)+' ('+((ctx.raw/gastoVals.reduce((a,b)=>a+b,0))*100).toFixed(1)+'%)' } } }
+      plugins:{ legend:{ position:'right', labels:{ boxWidth:10, padding:6, font:{size:9} } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw)+' ('+((ctx.raw/gastoVals.reduce((a,b)=>a+b,0))*100).toFixed(1)+'%)' } } }
     }
   });
 
-  // 6. Bancos Bs
+  // ═══ BANCOS ═══
   new Chart(document.getElementById('chartBancos'), {
     type:'bar',
-    data:{
-      labels:['Mercantil','Vzla\nValmojado','Vzla\nValdelagua','Banplus\nValdelagua','Banplus\nValmojado'],
-      datasets:[{ data:[597123,171109,149556,15914,6813], backgroundColor:[C.accent+'CC',C.green+'CC',C.blue+'CC',C.orange+'CC',C.sage+'CC'], borderColor:[C.accent,C.green,C.blue,C.orange,C.sage], borderWidth:1 }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => 'Bs. '+fmt(ctx.raw) } } },
-      scales:{ y:{ ticks:{ callback: v => fmt(v) } } }
-    }
+    data:{ labels:['Mercantil','Vzla\nValmojado','Vzla\nValdelagua','Banplus\nValdelagua','Banplus\nValmojado'], datasets:[{ data:[597123,171109,149556,15914,6813], backgroundColor:[C.accent+'CC',C.green+'CC',C.blue+'CC',C.orange+'CC',C.sage+'CC'], borderColor:[C.accent,C.green,C.blue,C.orange,C.sage], borderWidth:1 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => 'Bs. '+fmt(ctx.raw) } } }, scales:{ y:{ ticks:{ callback: v => fmt(v) } } } }
   });
 
-  // 7. Bancos USD
   new Chart(document.getElementById('chartBancosUSD'), {
     type:'bar',
-    data:{
-      labels:['Mercantil','Vzla\nValmojado','Vzla\nValdelagua','Banplus\nValdelagua','Mercantil\nUSD','Banplus\nValmojado'],
-      datasets:[{ data:[4796,1374,1201,128,124,55], backgroundColor:[C.accent+'CC',C.green+'CC',C.blue+'CC',C.orange+'CC',C.yellow+'CC',C.sage+'CC'], borderColor:[C.accent,C.green,C.blue,C.orange,C.yellow,C.sage], borderWidth:1 }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => '$'+fmt(ctx.raw) } } },
-      scales:{ y:{ ticks:{ callback: v => '$'+fmt(v) } } }
-    }
+    data:{ labels:['Mercantil','Vzla\nValmojado','Vzla\nValdelagua','Banplus\nValdelagua','Mercantil\nUSD','Banplus\nValmojado'], datasets:[{ data:[4796,1374,1201,128,124,55], backgroundColor:[C.accent+'CC',C.green+'CC',C.blue+'CC',C.orange+'CC',C.yellow+'CC',C.sage+'CC'], borderColor:[C.accent,C.green,C.blue,C.orange,C.yellow,C.sage], borderWidth:1 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => '$'+fmt(ctx.raw) } } }, scales:{ y:{ ticks:{ callback: v => '$'+fmt(v) } } } }
   });
 
-  // 8. Activos
+  // ═══ ACTIVOS / PASIVOS ═══
   new Chart(document.getElementById('chartActivos'), {
     type:'doughnut',
-    data:{
-      labels:['Inventario','Gastos preoperativos','Anticipo proveedores','Mobiliario','Efectivo','CxC Relacionadas'],
-      datasets:[{ data:[659038,647107,358325,300000,56503,1246], backgroundColor:[C.accent+'CC',C.green+'CC',C.blue+'CC',C.orange+'CC',C.sage+'CC',C.yellow+'CC'], borderColor:'#162016', borderWidth:2 }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'right', labels:{ boxWidth:12, padding:8, font:{size:10} } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw) } } }
-    }
+    data:{ labels:['Inventario','Gastos preoperativos','Anticipo proveedores','Mobiliario','Efectivo','CxC Relacionadas'], datasets:[{ data:[659038,647107,358325,300000,56503,1246], backgroundColor:[C.accent+'CC',C.green+'CC',C.blue+'CC',C.orange+'CC',C.sage+'CC',C.yellow+'CC'], borderColor:'#162016', borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'right', labels:{ boxWidth:12, padding:8, font:{size:10} } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw) } } } }
   });
 
-  // 9. Pasivos
   new Chart(document.getElementById('chartPasivos'), {
     type:'doughnut',
-    data:{
-      labels:['CxP Comerciales','CxP Relacionadas','Capital social','CxP Accionistas','Otras CxP'],
-      datasets:[{ data:[1222694,398323,300000,96471,4732], backgroundColor:[C.red+'CC',C.orange+'CC',C.green+'CC',C.accent+'CC',C.sage+'CC'], borderColor:'#162016', borderWidth:2 }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'right', labels:{ boxWidth:12, padding:8, font:{size:10} } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw) } } }
-    }
+    data:{ labels:['CxP Comerciales','CxP Relacionadas','Capital social','CxP Accionistas','Otras CxP'], datasets:[{ data:[1222694,398323,300000,96471,4732], backgroundColor:[C.red+'CC',C.orange+'CC',C.green+'CC',C.accent+'CC',C.sage+'CC'], borderColor:'#162016', borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'right', labels:{ boxWidth:12, padding:8, font:{size:10} } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw) } } } }
   });
 
-  // 10. CXP Accionistas
+  // ═══ CXP ACCIONISTAS ═══
   new Chart(document.getElementById('chartCXP'), {
     type:'doughnut',
-    data:{
-      labels:['Nicolas F. de Caleya','Familia Caleya','Carlos F. de Caleya'],
-      datasets:[{ data:[328342,37171,22356], backgroundColor:[C.accent+'CC',C.blue+'CC',C.green+'CC'], borderColor:'#162016', borderWidth:2 }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'right', labels:{ boxWidth:14, padding:12 } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw) } } }
-    }
+    data:{ labels:['Nicolas F. de Caleya','Familia Caleya','Carlos F. de Caleya'], datasets:[{ data:[328342,37171,22356], backgroundColor:[C.accent+'CC',C.blue+'CC',C.green+'CC'], borderColor:'#162016', borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'right', labels:{ boxWidth:14, padding:12 } }, tooltip:{ callbacks:{ label: ctx => ctx.label+': Bs. '+fmt(ctx.raw) } } } }
   });
 }
 </script>
