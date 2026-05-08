@@ -156,7 +156,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
 
     <!-- ALERTS -->
     <div class="alert-bar">
-      <strong>Ingreso total USD Ene-Abr 2026:</strong> $404,208 (Leche $207,481 + Venta animales $196,727).<br>
+      <strong>Ingreso total USD Ene-Abr 2026:</strong> $404,208 (Leche $207,481 + Venta Matadero $196,727).<br>
       <strong>Produccion de leche en caida:</strong> 250,787 litros YTD vs 314,336 en mismo periodo 2024. Promedio lt/bufala/dia: 2.65 (era 3.43 en 2024).<br>
       <strong>Resultado contable Bs.:</strong> Perdida de Bs. 17,960 — pero abril fue positivo (+24,628).<br>
       <strong>Efectivo disponible:</strong> Bs. 940,515 en bancos (~$7,554 USD).
@@ -167,7 +167,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       <div class="kpi-card">
         <div class="label">INGRESO TOTAL USD</div>
         <div class="value positive">$404,208</div>
-        <div class="sub">Leche + Venta animales Ene-Abr</div>
+        <div class="sub">Leche + Venta Matadero Ene-Abr</div>
       </div>
       <div class="kpi-card">
         <div class="label">INGRESO LECHE USD</div>
@@ -175,7 +175,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
         <div class="sub">250,787 litros Ene-Abr</div>
       </div>
       <div class="kpi-card">
-        <div class="label">VENTA ANIMALES USD</div>
+        <div class="label">VENTA MATADERO USD</div>
         <div class="value neutral">$196,727</div>
         <div class="sub">50 machos + 166 hembras</div>
       </div>
@@ -201,7 +201,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       <div class="section-title">INGRESOS EN USD</div>
       <div class="chart-grid">
         <div class="chart-box full">
-          <h3>Ingresos Mensuales USD — Leche vs Venta de Animales (2026)</h3>
+          <h3>Ingresos Mensuales USD — Leche vs Venta Matadero (2026)</h3>
           <div class="chart-container"><canvas id="chartIngresosUSD"></canvas></div>
         </div>
       </div>
@@ -210,7 +210,7 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
         <div style="overflow-x:auto;">
         <table class="fin-table">
           <thead>
-            <tr><th>Mes</th><th class="num">Leche (litros)</th><th class="num">Leche (USD)</th><th class="num">Venta Animales (USD)</th><th class="num">Total USD</th></tr>
+            <tr><th>Mes</th><th class="num">Leche (litros)</th><th class="num">Leche (USD)</th><th class="num">Venta Matadero (USD)</th><th class="num">Total USD</th></tr>
           </thead>
           <tbody>
             <tr><td>Enero</td><td class="num">72,106</td><td class="num">$64,626</td><td class="num">$102,156</td><td class="num">$166,782</td></tr>
@@ -270,9 +270,9 @@ body { font-family:'Montserrat',sans-serif; background:var(--bg); color:var(--te
       </div>
     </div>
 
-    <!-- ═══ SECTION: VENTA DE ANIMALES ═══ -->
+    <!-- ═══ SECTION: VENTA MATADERO ═══ -->
     <div class="section">
-      <div class="section-title">VENTA DE ANIMALES</div>
+      <div class="section-title">VENTA MATADERO</div>
       <div class="chart-grid">
         <div class="chart-box">
           <h3>Ventas 2026 por Fecha (USD)</h3>
@@ -527,7 +527,7 @@ function initCharts() {
       labels: months,
       datasets:[
         { label:'Leche (USD)', data:[64626,53117,50795,38943], backgroundColor:'rgba(91,165,91,0.8)', borderColor:C.green, borderWidth:1 },
-        { label:'Venta Animales (USD)', data:[102156,0,42193,52378], backgroundColor:'rgba(200,169,97,0.8)', borderColor:C.accent, borderWidth:1 },
+        { label:'Venta Matadero (USD)', data:[102156,0,42193,52378], backgroundColor:'rgba(200,169,97,0.8)', borderColor:C.accent, borderWidth:1 },
       ]
     },
     options:{
